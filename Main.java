@@ -13,7 +13,7 @@ class Main {
       //Error message logic
       
       if (loop > 1 || loop < -0){
-        System.out.println(" " + "\n" + "Err: No."+ loop +" not found");
+        System.out.println(" " + "\n" + "Err: No."+ loop +" not found, Closing program.");
         break;
       }
 
