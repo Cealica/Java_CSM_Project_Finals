@@ -1,10 +1,75 @@
 import java.util.*;
 
-class Main {
+public class Main {
+
+  public static void addStudent() {
+    Scanner read  = new Scanner(System.in);
+
+    String[] name = new String[10];
+    String[] surn = new String[10];
+    String[] crse = new String[10];
+    int[] year = new int[10];
+    String[] gndr = new String[10];
+    String ans;
+    
+    for(int x = 0; x < 10; x++){
+      
+      System.out.print("Enter The first and middle name of the student: ");
+      
+      for(int n = 0; n < 10; n++){
+        
+        name[n] = read.nextLine();
+
+          System.out.print("Enter the Surname name of the student: ");
+
+            for(int s = 0; s < 10; s++){
+
+              surn[s] = read.nextLine();
+              
+               System.out.print("Enter the Course name of the student: ");
+
+                for(int c = 0; c < 10; c++){
+                  
+                  crse[c] = read.nextLine();
+
+                    System.out.print("Enter the Year name of the student(Number Only): ");
+
+                     for(int y = 0; y < 10; y++){
+
+                        year[y] = read.nextInt();
+                                  read.nextLine();
+                        
+                         System.out.print("Enter the Gender name of the student: ");
+
+                           for(int g = 0; g < 10; g++){
+
+                             gndr[g] = read.nextLine();
+
+                              System.out.print("Do you still want to continue: ");
+                               
+                                  ans = read.nextLine();
+        
+                                    if(ans.equalsIgnoreCase("yes")){
+                                    continue;
+                                  } else if (ans.equalsIgnoreCase("no")){
+                                    break;
+                                  }else;
+                                      System.out.println("error cannot found");
+                            
+              }
+            }
+          }  
+        }
+      }
+    }
+            
+  }
+  
   public static void main(String[] args) {
     Scanner data  = new Scanner(System.in);
 
     //Data Variable
+    
     int menu;
     int loop = 0;
 
@@ -32,7 +97,7 @@ class Main {
           
         case 1:
           
-          System.out.println("" + "\n" + "Adding Student");
+          addStudent();
           
           System.out.println("" + "\n" + "[0] Go back to main menu" + "\n" + "[1] End the program");
 
