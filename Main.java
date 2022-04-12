@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class CSM_Project {
 
   public static void addStudent() {
     Scanner read  = new Scanner(System.in);
@@ -11,58 +11,72 @@ public class Main {
     int[] year = new int[10];
     String[] gndr = new String[10];
     String ans;
-    
-    for(int x = 0; x < 10; x++){
-      
-      System.out.print("Enter The first and middle name of the student: ");
-      
-      for(int n = 0; n < 10; n++){
-        
-        name[n] = read.nextLine();
+    boolean valid = true;
+    String input_name, input_surn, input_crse, input_gndr;
+    int array_Length = surn.length, input_year ,sub_menu_input, iteration = 0;
+    int count = 0;
 
-          System.out.print("Enter the Surname name of the student: ");
 
-            for(int s = 0; s < 10; s++){
+    while(valid){
+      System.out.println("Press 1 to input and press 0 to exit"+"\n"+"[1]Add"+"\n"+"[0]Exit");
 
-              surn[s] = read.nextLine();
-              
-               System.out.print("Enter the Course name of the student: ");
+      sub_menu_input = read.nextInt();
 
-                for(int c = 0; c < 10; c++){
-                  
-                  crse[c] = read.nextLine();
+      if(count == array_Length){
 
-                    System.out.print("Enter the Year name of the student(Number Only): ");
+        System.out.println("The array is now full you may not enter now ");
 
-                     for(int y = 0; y < 10; y++){
+        valid = false;
 
-                        year[y] = read.nextInt();
-                                  read.nextLine();
-                        
-                         System.out.print("Enter the Gender name of the student: ");
-
-                           for(int g = 0; g < 10; g++){
-
-                             gndr[g] = read.nextLine();
-
-                              System.out.print("Do you still want to continue: ");
-                               
-                                  ans = read.nextLine();
-        
-                                    if(ans.equalsIgnoreCase("yes")){
-                                    continue;
-                                  } else if (ans.equalsIgnoreCase("no")){
-                                    break;
-                                  }else;
-                                      System.out.println("error cannot found");
-                            
-              }
-            }
-          }  
-        }
       }
+      else if(sub_menu_input == 0){
+
+        System.out.println("Data input is now closed");
+
+        valid = false;
+
+      }
+      else if(sub_menu_input == 1){   
+
+        valid = true;
+
+      }
+      else{
+        System.out.println("Error");
+      }
+
+      while(valid){
+
+        System.out.println("Enter your Name");
+        input_name = read.nextLine();
+        read.nextLine();
+        name[iteration] = input_name;
+
+        System.out.println("Enter your Surname");
+        input_surn = read.nextLine();
+        surn[iteration] = input_surn;
+
+        System.out.println("Enter your Course");
+        input_crse = read.nextLine();
+        crse[iteration] = input_crse;
+
+        System.out.println("Enter your Year level (Numbers only)");
+        input_year = read.nextInt();
+        year[iteration] = input_year;
+
+        System.out.println("Ender your gender");
+        input_gndr =  read.nextLine();
+        read.nextLine();
+        gndr[iteration] = input_gndr;
+
+        count++;
+        iteration++;
+        break;
+
+      }
+
     }
-            
+    
   }
   
   public static void main(String[] args) {
