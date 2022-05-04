@@ -17,13 +17,19 @@ public class addStudent {
     Scanner read = new Scanner(System.in);
 
     public void function() {
-      
+
         while(valid){
         
             try {
 
                 System.out.println("\n"+"Enter your Name"+"\n");
                 input_name = read.nextLine();
+
+                /*This is for subcalling so you can input a name if 
+                the function() method has been called again*/
+                if(count == 1)
+                  read.nextLine();
+
                 name[iteration] = input_name;
       
                 System.out.println("\n"+"Enter your Surname"+"\n");
@@ -40,7 +46,6 @@ public class addStudent {
       
                 System.out.println("\n"+"Ender your gender"+"\n");
                 input_gndr =  read.nextLine();
-                read.nextLine();
                 gndr[iteration] = input_gndr;
       
                 count++;
@@ -74,6 +79,7 @@ public class addStudent {
             case 0:
 
               submen();
+              function();
 
             case 1:
                 
@@ -109,6 +115,8 @@ public class addStudent {
             else if(sub_menu_input == 1){   
     
               valid = true;
+
+              break;
     
             }
             else{
