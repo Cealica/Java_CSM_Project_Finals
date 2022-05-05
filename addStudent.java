@@ -10,6 +10,7 @@ public class addStudent {
     int[] year = new int[10];
     String[] gndr = new String[10];
     boolean valid = true;
+    boolean stay = true;
     String input_name, input_surn, input_crse, input_gndr;
     int array_Length = surn.length, input_year ,sub_menu_input, iteration = 0;
     int count = 0;
@@ -46,6 +47,7 @@ public class addStudent {
       
                 System.out.println("\n"+"Ender your gender"+"\n");
                 input_gndr =  read.nextLine();
+                read.nextLine();
                 gndr[iteration] = input_gndr;
       
                 count++;
@@ -53,7 +55,7 @@ public class addStudent {
                 break;
             
             /* This error logic runs if it detected a string or a chracter was inserted
-            instead of a number then it will add a number to an error and it will display the error
+            instead of a number then it will add a number to the err value and it will display the error
             message and it will close the loop then it will go to the switch to see if the err
             integer is more than 0, if its more than 0 and it will not go to the method submen() and 
             just quit the overall add student class*/
@@ -66,20 +68,12 @@ public class addStudent {
 
                 break;
       
-              }finally{
-      
-                System.out.println();
-
-            }
-
-          }
 
           switch(err){
 
             case 0:
 
               submen();
-              function();
 
             case 1:
                 
@@ -88,7 +82,7 @@ public class addStudent {
       }
 
       
-    public  void submen() { 
+    private  void submen() { 
         
         try{
     
@@ -116,7 +110,9 @@ public class addStudent {
     
               valid = true;
 
-              break;
+              stay = false;
+
+              function();
     
             }
             else{

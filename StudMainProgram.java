@@ -9,11 +9,16 @@ public class StudMainProgram {
       //data variables
       int menu;
       int loop = 0;
+      //clasess
       addStudent s = new addStudent();  
+      disStudent d = new disStudent();
 
       do{
         
-        //Error message logic
+        try {
+          
+                  /*This error will appear if the you choose 
+                  above 1 while going back to the main menu*/
         
         if (loop > 1 || loop < -0){
           System.out.println(" " + "\n" + "Err: No."+ loop +" not found, Closing program.");
@@ -29,7 +34,7 @@ public class StudMainProgram {
       System.out.print(" " + "\n" + "Enter your choice:  ");
       menu = data.nextInt();
 
-        //sub menu 
+        //Main Menu
       
         switch (menu) {
             
@@ -37,53 +42,62 @@ public class StudMainProgram {
             
             s.function();
 
-            System.out.println("" + "\n" + "[0] Go back to main menu" + "\n" + "[1] End the program");
+            System.out.println("\n" + "\n" + "[0] Go back to main menu" + "\n" + "[1] End the program");
 
-            System.out.print(" " + "\n" + "Enter your choice:  ");
+            System.out.print("\n" + "\n" + "Enter your choice:  ");
             loop = data.nextInt();
             
           break;
             
           case 2:
             
-            System.out.println("" + "\n" + "Display Student Record");
+            d.function();
 
-            System.out.println("" + "\n" + "[0] Go back to main menu" + "\n" + "[1] End the program");
+            System.out.println("\n" + "\n" + "[0] Go back to main menu" + "\n" + "[1] End the program");
 
-            System.out.print(" " + "\n" + "Enter your choice:  ");
+            System.out.print("\n" + "\n" + "Enter your choice:  ");
             loop = data.nextInt();
             
           break;
  
           case 3:
             
-            System.out.println("" + "\n" + "Searching");
+            System.out.println("\n" + "\n" + "Searching");
 
-            System.out.println("" + "\n" + "[0] Go back to main menu" + "\n" + "[1] End the program");
+            System.out.println("\n" + "\n" + "[0] Go back to main menu" + "\n" + "[1] End the program");
 
-            System.out.print(" " + "\n" + "Enter your choice:  ");
+            System.out.print("\n" + "\n" + "Enter your choice:  ");
             loop = data.nextInt();
             
           break;
             
           case 4:
             
-            System.out.println("" + "\n" + "Sorting");
+            System.out.println("\n" + "\n" + "Sorting");
 
-            System.out.println("" + "\n" + "[0] Go back to main menu" + "\n" + "[1] End the program");
+            System.out.println("\n" + "\n" + "[0] Go back to main menu" + "\n" + "[1] End the program");
 
-            System.out.print(" " + "\n" + "Enter your choice:  ");
+            System.out.print("\n" + "\n" + "Enter your choice:  ");
             loop = data.nextInt();
             
           break;
 
           default:
-              System.out.println(" " + "\n" + "Menu No." + menu + " not avaliable");
+              System.out.println("\n" + "\n" + "Menu No." + menu + " not avaliable");
+        }
+
+        } catch (Exception e) {
+          
+          System.out.print("\n"+"uh..oh...seems a retard has been using my program");
+
+          loop = 0;
+
         }
       
       }while(loop != 1);
+
     }
-    
+  
   }
   
 }
