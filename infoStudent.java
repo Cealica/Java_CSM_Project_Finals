@@ -337,28 +337,10 @@ public class infoStudent {
 
       case 1:
 
-      System.out.print("By [1] descending or [2] ascending order:  ");
-      choice = read.nextInt();
+          Arrays.sort(surn, Comparator.nullsLast(Comparator.naturalOrder()));
 
-        
-
-        if (choice == 1){
-
-          Arrays.sort(surn, Collections.reverseOrder());
-
-          System.out.println(Arrays.toString(surn));
-
-        }else if (choice == 2){
-
-          Arrays.sort(surn, Comparator.nullsLast(String.CASE_INSENSITIVE_ORDER));
-          
-          System.out.println(Arrays.toString(surn));
-
-        } else {
-
-          System.out.println("Sorry i cannot find that");
-
-        }
+          System.out.print("Sorted Surn:");
+          System.out.print(Arrays.toString(surn));
 
       break;
 
@@ -391,26 +373,10 @@ public class infoStudent {
 
       case 5:
 
-      System.out.print("By [1] descending or [2] ascending order:  ");
-      choice = read.nextInt();
+      Arrays.sort(gndr, Comparator.nullsLast(Comparator.naturalOrder()));
 
-        if (choice == 1){
-
-          Arrays.sort(gndr, Collections.reverseOrder());
-
-          System.out.println(Arrays.toString(gndr));
-
-        }else if (choice == 2){
-
-          Arrays.sort(gndr, Collections.reverseOrder());
-          
-          System.out.println(Arrays.toString(gndr));
-
-        } else {
-
-          System.out.println("Sorry i cannot find that");
-
-        }
+      System.out.println("Sorted Gender:");
+      System.out.println(Arrays.toString(gndr));
 
       break;
 
